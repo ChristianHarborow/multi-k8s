@@ -20,3 +20,13 @@ after_success:
   - docker push christianharborow/multi-nginx
   - docker push christianharborow/multi-server
   - docker push christianharborow/multi-worker
+
+deploy:
+  region: "eu-west-2"
+  app: "multi-docker"
+  env: "Multi-docker-env"
+  bucket_name: "elasticbeanstalk-eu-west-2-767398143123"
+  bucket_path: "docker-multi"
+  access_key: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
+  
